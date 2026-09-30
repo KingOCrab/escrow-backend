@@ -17,7 +17,7 @@ app.get('/api/products', (req, res) => {
 // Add a new product (metadata)
 app.post('/api/products', (req, res) => {
     const newProduct = {
-        id: products.length + 1,
+        id: req.body.id, // CRITICAL: Now using the true blockchain ID
         name: req.body.name,
         description: req.body.description,
         priceEth: req.body.priceEth
